@@ -5,11 +5,13 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
+        occurences = dict()
         for i in range(0, len(nums)):
             x = nums[i]
-            for j in range(i+1, len(nums)):
-                y = nums[j]
-                if (x + y == target): 
-                    return [i, j]
+            if ((target - x) in occurences): 
+                j = occurences[target - x]
+                return [j, i]
+            else:
+                occurences[nums[i]] = i 
         return []
-        
+       
