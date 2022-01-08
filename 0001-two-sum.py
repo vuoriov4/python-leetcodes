@@ -12,6 +12,6 @@ class Solution(object):
                 j = occurences[target - x]
                 return [j, i]
             else:
-                occurences[nums[i]] = i 
+                occurences[x] = i 
         return []
        
